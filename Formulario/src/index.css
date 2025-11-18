@@ -1,0 +1,47 @@
+#root{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: black !important;
+    color: white !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    font-weight: bold;
+    font-size: 1.2rem;
+
+}
+
+h1{
+    font-weight: bold !important;
+}
+
+h3{
+    font-weight: bold !important;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;   
+    align-items: center;      
+    gap: 12px;                
+}
+
+input {
+    width: 40rem;
+    border-radius: 0.4rem;
+    border: none;
+}
+
+button{
+    width: 50rem;
+    border-radius: 0.4rem;
+    border: none;
+}

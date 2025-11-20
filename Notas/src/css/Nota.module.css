@@ -1,0 +1,16 @@
+.h{
+    color:red;
+}
+
+.l{
+    color:green;
+}
+
+.m{
+    color:orange;
+}
+
+.d{
+    display: flex;
+    justify-content: space-evenly;
+}

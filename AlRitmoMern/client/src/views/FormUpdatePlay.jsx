@@ -20,21 +20,17 @@ const FormUpdatePlay = ({ listplaylist, setlistplaylist }) => {
 
     const navigate = useNavigate();
 
-    // Cargar canciones + datos de playlist
     useEffect(() => {
         const fetchData = async () => {
             try {
-                // Traer canciones
                 const resSongs = await axios(URLCAN);
                 setCancions(resSongs.data);
 
-                // Traer playlist
                 const resPlaylist = await axios(`${URLPLAY}/${id}`);
                 const playlist = resPlaylist.data;
 
                 setName(playlist.name);
 
-                // Marcar las canciones ya seleccionadas
                 const selectedObjects = resSongs.data.filter(song =>
                     playlist.canciones.some(pc => pc._id === song._id)
                 );
@@ -49,7 +45,6 @@ const FormUpdatePlay = ({ listplaylist, setlistplaylist }) => {
         fetchData();
     }, [id]);
 
-    // Manejo del checkbox
     const handleCheckbox = (cancion) => {
         const exists = selectedcan.some(s => s._id === cancion._id);
 
@@ -60,7 +55,6 @@ const FormUpdatePlay = ({ listplaylist, setlistplaylist }) => {
         }
     };
 
-    // Submit
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -70,7 +64,6 @@ const FormUpdatePlay = ({ listplaylist, setlistplaylist }) => {
         })
         .then(response => {
 
-            // Actualizar playlist en el estado principal
             const updated = listplaylist.map(p =>
                 p._id === id ? response.data : p
             );
@@ -82,7 +75,6 @@ const FormUpdatePlay = ({ listplaylist, setlistplaylist }) => {
         .catch(err => {
             const errs = err.response?.data?.errors || {};
 
-            // Convertir a formato legible
             setErrors(
                 Object.fromEntries(
                     Object.entries(errs).map(([key, val]) => [key, val.message])
@@ -104,7 +96,7 @@ const FormUpdatePlay = ({ listplaylist, setlistplaylist }) => {
                     id="name"
                     onChange={(e) => {
                         setName(e.target.value);
-                        setErrors(prev => ({ ...prev, name: "" })); // limpiar error al escribir
+                        setErrors(prev => ({ ...prev, name: "" }));
                     }}
                 />
                 {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}

@@ -1,0 +1,18 @@
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  margin-bottom: 8px;
+}
+
+.checkboxItem input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #1e1c8f; 
+  cursor: pointer;
+}
+
+.checkboxLabel {
+  color: white;
+  font-size: 1.5rem;
+}

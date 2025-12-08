@@ -33,7 +33,7 @@ const [listplaylist,setlistplaylist]=useState([]);
         <Route path='/playlist/:id' element={<Playlist listplaylist={listplaylist} setlistplaylist={setlistplaylist} />}/>
         <Route  path='*' element={<Notfound/>}/>
         <Route path='/canciones/new'element={<FormCancion listcancion={listcancion} setlistcancion={setlistcancion}/>}/>
-        <Route path='/playlist/new' element={<NewPlaylist/> }/>
+        <Route path='/playlist/new' element={<NewPlaylist listplaylist={listplaylist} setlistplaylist={setlistplaylist} /> }/>
       </Routes>
 
 

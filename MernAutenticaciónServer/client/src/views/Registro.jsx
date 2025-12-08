@@ -30,7 +30,7 @@ const Registro = ({ setregistro }) => {
                 localStorage.setItem("token", response.data.token);
                 setregistro(true);
                 seterrors({});
-                navigate("/login");
+                navigate("/canciones");
             })
             .catch(e=>seterrors(e.response.data.errors));
     };

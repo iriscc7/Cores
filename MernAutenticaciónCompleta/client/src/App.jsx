@@ -34,7 +34,7 @@ const[registro,setregistro]=useState(false)
   return (
     <>
     <hr />
-      {login && <button onClick={logOut}>Log out</button>}
+      {login && <button className='btn btn-outline-danger' onClick={logOut}>Log out</button>}
       <hr />
 
     {(login)?
